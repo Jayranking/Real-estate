@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <title>Build Form</title>
+    <%- include('./snippet/header.ejs') %>
+  </head>
+  <body>
+  
+    <%- include('./snippet/navbar.ejs') %>
+
+    <div class="container-fluid">
+      <div class="row">
+        <%- include('./snippet/sidebar.ejs') %>
+
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="container mt-2 mb-5">
+                <div class="row justify-content-center">
+                  <div class="col-lg-10">
+                    <div class="card shadow">
+                      <div class="card-body">
+                        <h4 class="card-title text-center mb-4 fw-bold text-primary">Post Land</h4>
+    
+                        <form id="buildForm" enctype="multipart/form-data">
+                            <div class="row">
+                              <div class="col-md-6">
+                                  <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" name="estate_name" placeholder="Estate Name">
+                                    <label>Estate Name</label>
+                                  </div>
+                                  <div class="estateErr text-center text-danger"></div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" name="location" placeholder="Location">
+                                    <label>Location</label>
+                                </div>
+                                <div class="locationErr text-center text-danger"></div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" name="amount" placeholder="Amount">
+                                    <label>Amount</label>
+                                </div>
+                                <div class="amountErr text-center text-danger"></div>
+                              </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" name="land_size" placeholder="Land size(sqm)">
+                                        <label>Land size(sqm)</label>
+                                      </div>
+                                      <div class="land_sizeErr text-center text-danger"></div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-6">
+                                  <div class="form-floating mb-3">
+                                      <input type="text" class="form-control" name="phone_no" placeholder="Agent Phone no">
+                                      <label>Agent phone no</label>
+                                  </div>
+                                  <div class="phone_noErr text-center text-danger"></div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="form-floating mb-3">
+                                      <input type="email" class="form-control" name="email" placeholder="Agent email">
+                                      <label>Agent email</label>
+                                  </div>
+                                  <div class="emailErr text-center text-danger"></div>
+                              </div>
+                          </div>
+
+                          <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="description" placeholder="Description">
+                            <label>Description</label>
+                            <div class="descriptionErr"></div>
+                          </div>
+
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                  <input type="file" class="form-control" name="land_img" placeholder="Upload land image">
+                                  <label>Upload land image</label>
+                                </div>
+                                <div class="land_imgErr text-danger text-center"></div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                  <input type="file" class="form-control" name="plan_img" placeholder="Upload building style/plan">
+                                  <label>Upload building style/plan</label>
+                                </div>
+                                <div class="plan_imgErr text-danger text-center"></div>
+                              </div>
+                              
+                          </div>
+                        
+                          <button type="submit" class="btn btn-primary w-100 fw-bold">Publish</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+    
+              </div>
+          
+        </main>
+      </div>
+    </div>
+
+
+    <script src="/js/build.js"></script>
+    <%- include('./snippet/scripts.ejs') %>
+    </body>
+</html>

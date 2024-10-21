@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <title>Edit Form</title>
+    <%- include('./snippet/header.ejs') %>
+  </head>
+  <body>
+  
+    <%- include('./snippet/navbar.ejs') %>
+
+    <div class="container-fluid">
+      <!-- <div class="row"> -->
+
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="container mt-5 mb-5">
+                <div class="row justify-content-center">
+                  <div class="col-lg-10">
+                    <div class="card shadow">
+                      <div class="card-body">
+                        <h4 class="card-title text-center mb-4 fw-bold text-primary">Edit building</h4>
+                        
+                        <% if (context.buy) { %>
+                            <form id="buyForm" enctype="multipart/form-data">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3">
+                                          <input type="text" value="<%= context.buy.estate_name %>" class="form-control" name="estate_name" placeholder="Estate Name">
+                                          <label>Estate Name</label>
+                                        </div>
+                                        <div class="estateErr text-center text-danger"></div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="form-floating mb-3">
+                                          <input type="text" class="form-control" value="<%= context.buy.location %>" name="location" placeholder="Location">
+                                          <label>Location</label>
+                                      </div>
+                                      <div class="locationErr text-center text-danger"></div>
+                                    </div>
+                                </div>
+    
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" value="<%= context.buy.amount %>" name="amount" placeholder="Amount">
+                                            <label>Amount</label>
+                                        </div>
+                                        <div class="amountErr text-center text-danger"></div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" value="<%= context.buy.description %>" name="description" placeholder="Description">
+                                            <label>Bulding description</label>
+                                          </div>
+                                          <div class="descriptionErr text-center text-danger"></div>
+                                    </div>
+                                </div>
+    
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" name="phone_no" value="<%= context.buy.phone_no %>"  placeholder="Agent Phone no">
+                                            <label>Agent phone no</label>
+                                        </div>
+                                        <div class="phone_noErr text-center text-danger"></div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3">
+                                            <input type="email" class="form-control" value="<%= context.buy.email %>" name="email" placeholder="Agent email">
+                                            <label>Agent email</label>
+                                        </div>
+                                        <div class="emailErr text-center text-danger"></div>
+                                    </div>
+                                </div>
+    
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="number" class="form-control" value="<%= context.buy.bedroom %>" name="bedroom" placeholder="bedroom">
+                                            <label>bedroom</label>
+                                        </div>
+                                        <div class="bedroomErr text-center text-danger"></div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="number" class="form-control" name="sitting_room" value="<%= context.buy.sitting_room %>" placeholder="Sitting room">
+                                            <label>Sitting room</label>
+                                          </div>
+                                          <div class="sitting_roomErr text-center text-danger"></div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="number" class="form-control" value="<%= context.buy.kitchen %>"  name="kitchen" placeholder="Kitchen">
+                                            <label>Kitchen</label>
+                                        </div>
+                                        <div class="kitchenErr text-center text-danger"></div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="number" class="form-control" value="<%= context.buy.toilet %>" name="toilet" placeholder="Toilet">
+                                            <label>Toilet</label>
+                                          </div>
+                                          <div class="toiletErr text-center text-danger"></div>
+                                    </div>
+                                </div>
+    
+                                <div class="form-floating mb-3">
+                                    <input type="file" class="form-control" name="img" value="<%= context.buy.img %>" placeholder="Upload building image">
+                                    <label>Upload building image</label>
+                                </div>
+                                <div class="imageErr text-center text-danger"></div>
+                                <input type="hidden" name="buyId" value="<%= context.buy._id %>">
+
+                            
+                              <button type="submit" class="btn btn-primary w-100 fw-bold">Submit</button>
+        
+                            </form>
+                        <% } %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+    
+              </div>
+          
+        </main>
+      <!-- </div> -->
+    </div>
+
+
+    <script src="/js/edit-buy.js"></script>
+    <%- include('./snippet/scripts.ejs') %>
+    </body>
+</html>
